@@ -3,6 +3,7 @@
 import yargs from "yargs";
 import { hideBin } from "yargs/helpers";
 import boxen from "boxen";
+import figlet from "figlet";
 
 const argv = yargs(hideBin(process.argv))
   .usage("Usage: $0 <command> [options]")
@@ -16,17 +17,26 @@ const argv = yargs(hideBin(process.argv))
   .alias("h", "help")
   .epilog("Created by lilKriT").argv;
 
-console.log(
-  boxen(`CLI says hello, ${argv.name}`, {
-    title: "hello_cli",
-    titleAlignment: "right",
-    borderColor: "cyan",
-    borderStyle: "round",
-    padding: 1,
-    margin: 1,
-    dimBorder: true,
-    float: "left",
-  })
-);
+const boxenOptions = {
+  title: "hello_cli",
+  titleAlignment: "right",
+  borderColor: "cyan",
+  borderStyle: "round",
+  padding: { top: 2, left: 3, right: 3, bottom: 0 },
+  margin: 1,
+  dimBorder: true,
+  float: "left",
+};
+
+// console.log(boxen(`CLI says hello, ${argv.name}`, boxenOptions));
+figlet(argv.name, { font: "3D-ASCII" }, function (err, data) {
+  if (err) {
+    console.log("Sorry, something went wrong with figlet...");
+    console.dir(err);
+    return;
+  }
+  console.log(boxen(data, boxenOptions));
+  //   console.log(data);
+});
 
 // console.log(argv);

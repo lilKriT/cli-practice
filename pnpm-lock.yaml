@@ -8,6 +8,9 @@ dependencies:
   boxen:
     specifier: ^7.1.1
     version: 7.1.1
+  figlet:
+    specifier: ^1.6.0
+    version: 1.6.0
   yargs:
     specifier: ^17.7.2
     version: 17.7.2
@@ -106,6 +109,12 @@ packages:
   /escalade@3.1.1:
     resolution: {integrity: sha512-k0er2gUkLf8O0zKJiAhmkTnJlTvINGv7ygDNPbeIsX/TJjGJZHuh9B2UxbsaEkmlEo9MfhrSzmhIlhRlI2GXnw==}
     engines: {node: '>=6'}
+    dev: false
+
+  /figlet@1.6.0:
+    resolution: {integrity: sha512-31EQGhCEITv6+hi2ORRPyn3bulaV9Fl4xOdR169cBzH/n1UqcxsiSB/noo6SJdD7Kfb1Ljit+IgR1USvF/XbdA==}
+    engines: {node: '>= 0.4.0'}
+    hasBin: true
     dev: false
 
   /get-caller-file@2.0.5:
