@@ -16,6 +16,7 @@
   "dependencies": {
     "boxen": "^7.1.1",
     "figlet": "^1.6.0",
+    "gradient-string": "^2.0.2",
     "yargs": "^17.7.2"
   }
 }

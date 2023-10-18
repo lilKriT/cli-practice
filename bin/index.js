@@ -4,6 +4,7 @@ import yargs from "yargs";
 import { hideBin } from "yargs/helpers";
 import boxen from "boxen";
 import figlet from "figlet";
+import gradient from "gradient-string";
 
 const argv = yargs(hideBin(process.argv))
   .usage("Usage: $0 <command> [options]")
@@ -35,7 +36,8 @@ figlet(argv.name, { font: "3D-ASCII" }, function (err, data) {
     console.dir(err);
     return;
   }
-  console.log(boxen(data, boxenOptions));
+  console.log(boxen(gradient.mind.multiline(data), boxenOptions));
+  //   console.log(chalk.blue.bgRed.bold.underline("Testing chalk"));
   //   console.log(data);
 });
 
